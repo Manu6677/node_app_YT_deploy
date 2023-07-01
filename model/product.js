@@ -15,6 +15,7 @@ const productSchema = new Schema({
     type: Number,
     min: [0, "Wrong Min rating"],
     max: [6, "wrong Max rating"],
+    default: 0,
   },
   brand: { type: String, required: true },
   category: { type: String, required: true },

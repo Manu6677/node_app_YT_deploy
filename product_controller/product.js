@@ -40,7 +40,6 @@ const update = async (req, res) => {
   }
 };
 
-// In replace there is a PUT request
 const replace = async (req, res) => {
   try {
     const id = req.params.id;
@@ -55,10 +54,10 @@ const replace = async (req, res) => {
 };
 
 const del = async (req, res) => {
+  const id = req.params.id;
   try {
-    const id = req.params.id;
     const doc = await Product.findOneAndDelete({ _id: id });
-    res.status(200).json(doc);
+    res.status(201).json(doc);
   } catch (err) {
     res.status(400).json(err);
   }
