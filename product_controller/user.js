@@ -1,6 +1,9 @@
 const fs = require("fs");
 
-const data = JSON.parse(fs.readFileSync("data.json", "utf-8")); // JSON data parse kia then neche fr json data m product access kia
+const path = require("path");
+const data = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, "../data.json"), "utf-8")
+); // JSON data parse kia then neche fr json data m product access kia
 const user = data.users;
 // console.log(products);
 
